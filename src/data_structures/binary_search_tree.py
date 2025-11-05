@@ -1,3 +1,8 @@
+import re
+from typing import List
+from unittest import result
+
+
 class Node:
     def __init__(self, value):
         self.value = value
@@ -133,23 +138,74 @@ class BinarySearchTree:
                 if node.left:
                     self._print_tree(node.left, extend, True)
 
+    def BFS(self):
+        queue: List[Node] = []
+        queue.append(self.root)
+        results: List[int] = []
+        while len(queue) > 0:
+            current_node = queue.pop(0)
+            results.append(current_node.value)
+            if current_node.left is not None:
+                queue.append(current_node.left)
+            if current_node.right is not None:
+                queue.append(current_node.right)
+        return results
+
+    def dfs_pre_order(self):
+        results: List[int] = []
+
+        def traverse(current_node: Node):
+            results.append(current_node.value)
+            if current_node.left is not None:
+                traverse(current_node.left)
+            if current_node.right is not None:
+                traverse(current_node.right)
+    
+        traverse(self.root)
+        return results
+
+    def dfs_post_order(self):
+        results: List[int] = []
+
+        def traverse(current_node: Node):
+            if current_node.left is not None:
+                traverse(current_node.left)
+            if current_node.right is not None:
+                traverse(current_node.right)
+            results.append(current_node.value)
+    
+        traverse(self.root)
+        return results
+    
+    def dfs_in_order(self):
+        results: List[int] = []
+
+        def traverse(current_node: Node):
+            if current_node.left is not None:
+                traverse(current_node.left)
+            results.append(current_node.value)
+            if current_node.right is not None:
+                traverse(current_node.right)
+    
+        traverse(self.root)
+        return results
+
 
 # Example usage
 if __name__ == "__main__":
     bst = BinarySearchTree()
     bst.insert(47)
     bst.insert(21)
-    bst.insert(20)
-    bst.insert(25)
-    bst.insert(24)
-    bst.insert(26)
     bst.insert(76)
     bst.insert(18)
+    bst.insert(27)
     bst.insert(52)
     bst.insert(82)
     
     print("BST Structure:")
     bst.print_tree()
-    bst.r_delete(21)
-    print("BST Structure after deleting 21:")
-    bst.print_tree()
+   
+    print(f"BFS: {bst.BFS()}")
+    print(f"DFS PreOrder: {bst.dfs_pre_order()}")
+    print(f"DFS PostOrder: {bst.dfs_post_order()}")
+    print(f"DFS InOrder: {bst.dfs_in_order()}")
