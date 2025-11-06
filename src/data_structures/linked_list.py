@@ -260,11 +260,12 @@ class LinkedList:
 
         Values are printed one per line, preceded by a separator line.
         """
-        print(30 * "#")
         temp_node = self.head
+        output = ""        
         while temp_node is not None:
-            print(temp_node.value)
+            output += f"{temp_node.value} -> "
             temp_node = temp_node.next
+        print(output)
 
     def reverse_between(self, start_index: int, end_index: int):
         """
