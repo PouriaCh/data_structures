@@ -66,6 +66,12 @@ class BubbleSortLL(LinkedList):
             if not swap_occurred:
                 break
 
+        # update head and tail
+        current = self.head
+        while current.next is not None:
+            current = current.next
+        self.tail = current
+
         
 #################################
 
