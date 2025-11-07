@@ -2,7 +2,7 @@
 name = "data-structures"
 version = "0.1.0"
 description = "Data structures and interview problems"
-authors = ["Your Name <you@example.com>"]
+authors = ["Pouria Chalangari <pouria.chalangari@mail.concordia.ca>"]
 packages = [
     {include = "data_structures", from = "src"},
     {include = "interview", from = "src"}
