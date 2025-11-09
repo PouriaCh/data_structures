@@ -209,3 +209,4 @@ if __name__ == "__main__":
     print(f"DFS PreOrder: {bst.dfs_pre_order()}")
     print(f"DFS PostOrder: {bst.dfs_post_order()}")
     print(f"DFS InOrder: {bst.dfs_in_order()}")
+    
