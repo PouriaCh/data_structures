@@ -9,26 +9,28 @@ This repository contains clean, well-documented implementations of essential dat
 ## 🏗️ Data Structures
 
 ### Linear Data Structures
-- **Linked List** - Singly linked list with operations: append, prepend, pop, insert, remove, reverse, and more
-- **Doubly Linked List** - Bidirectional linked list implementation
-- **Stack & Queue** - LIFO and FIFO data structures
-- **Hash Table** - Key-value storage with collision handling
+- **Linked List** - Singly linked list supporting append, prepend, pop, insert, remove, reverse, and traversal helpers
+- **Doubly Linked List** - Bidirectional list with head/tail operations and node removal
+- **Stack & Queue** - Classic LIFO and FIFO structures implemented with Python lists
+- **Hash Table** - Open addressing hash table with collision handling
 
-### Tree Data Structures
-- **Binary Search Tree (BST)** - Self-balancing tree with insert, delete, search, and traversal operations
-- **Min Heap** - Priority queue with minimum element at root
-- **Max Heap** - Priority queue with maximum element at root
+### Tree & Heap Structures
+- **Binary Search Tree (BST)** - Insert, delete, search, and traversal utilities
+- **Min Heap** - Priority queue keeping the minimum value at the root
+- **Max Heap** - Priority queue keeping the maximum value at the root
 
-### Graph Data Structures
-- **Graph** - Graph representation with adjacency list/matrix support
+### Graph Structures
+- **Graph** - Adjacency list implementation with breadth-first and depth-first traversals
 
 ## 🔄 Algorithms
 
 ### Sorting Algorithms
-- **Bubble Sort** - Linked list implementation with early termination optimization
-- **Selection Sort** - In-place sorting algorithm
-- **Insertion Sort** - Efficient for small datasets
-- **Basic Sorts** - Additional sorting algorithm implementations
+- **Bubble Sort (Linked List)** - Stable linked list variant with early termination optimization
+- **Selection Sort (Linked List)** - In-place linked list sorting routine
+- **Insertion Sort (Linked List)** - Efficient sorter for nearly sorted linked lists
+- **Merge Sort** - Divide-and-conquer sort for arrays
+- **Quick Sort** - In-place partition-based sort
+- **Basic Sorts** - Collection of introductory sorting implementations
 
 ## 💼 Interview Problems
 
@@ -50,9 +52,17 @@ Solutions to common coding interview questions organized by topic:
 - Group Anagrams
 - Subarray Sum
 - Find Set Pairs
+- Find Max Min
+- Find Longest String
+- Remove Duplicates
+- Remove List Element
 - Kth Largest Number
 - Kth Smallest Number
 - Max Stream Element
+- Max Trade Profit
+
+### Hash Table & Miscellaneous Problems
+- Item in Common (Hash Table)
 
 ## 📁 Project Structure
 
@@ -69,12 +79,30 @@ data_structures/
 │   │   ├── max_heap.py
 │   │   └── graph.py
 │   ├── algorithms/           # Algorithm implementations
-│   │   └── basic_sorts.py
+│   │   ├── basic_sorts.py
+│   │   ├── merge_sort.py
+│   │   └── quick_sort.py
 │   └── interview/            # Coding interview solutions
 │       ├── bubble_sort_linked_list.py
 │       ├── selection_sort_linked_list.py
 │       ├── insertion_sort_linked_list.py
-│       └── ...
+│       ├── find_longest_string.py
+│       ├── find_max_min.py
+│       ├── find_set_pairs.py
+│       ├── group_anagrams.py
+│       ├── hast_table_1.py
+│       ├── invert_binary_tree.py
+│       ├── kth_largest_number.py
+│       ├── kth_smallest_node_bst.py
+│       ├── kth_smallest_number.py
+│       ├── max_stream_element.py
+│       ├── max_trade_profit.py
+│       ├── remove_duplicates.py
+│       ├── remove_list_element.py
+│       ├── sorted_list_to_bst.py
+│       ├── subarray_sum.py
+│       ├── two_sum.py
+│       └── validate_bst.py
 └── README.md
 ```
 
@@ -179,4 +207,3 @@ This project is open source and available under the MIT License.
 ---
 
 ⭐ If you find this project helpful, please consider giving it a star!
-
