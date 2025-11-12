@@ -66,31 +66,11 @@ class BubbleSortLL(LinkedList):
             if not swap_occurred:
                 break
 
-        # update head and tail
+        # Refresh tail pointer to last node after in-place swaps.
         current = self.head
         while current.next is not None:
             current = current.next
         self.tail = current
-
-        
-#################################
-
-
-my_linked_list = BubbleSortLL(4)
-my_linked_list.append(2)
-my_linked_list.append(6)
-my_linked_list.append(5)
-my_linked_list.append(1)
-my_linked_list.append(3)
-
-print("Linked List Before Sort:")
-my_linked_list.print_list()
-
-my_linked_list.bubble_sort()
-
-print("Sorted Linked List:")
-my_linked_list.print_list()
-
 
 """
     EXPECTED OUTPUT:
@@ -112,3 +92,20 @@ my_linked_list.print_list()
     6
 
 """
+
+
+if __name__ == "__main__":
+    my_linked_list = BubbleSortLL(4)
+    my_linked_list.append(2)
+    my_linked_list.append(6)
+    my_linked_list.append(5)
+    my_linked_list.append(1)
+    my_linked_list.append(3)
+
+    print("Linked List Before Sort:")
+    my_linked_list.print_list()
+
+    my_linked_list.bubble_sort()
+
+    print("Sorted Linked List:")
+    my_linked_list.print_list()
