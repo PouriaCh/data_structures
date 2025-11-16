@@ -1,20 +1,19 @@
-"""
-List: Remove Element ( ** Interview Question)
+"""Remove all occurrences of ``val`` from a list in-place.
 
-Given a list of integers nums and an integer val, write a function remove_element that removes all occurrences 
-of val in the list in-place and returns the new length of the modified list. The function should not allocate 
-extra space for another list; instead, it should modify the input list in-place with O(1) extra memory.
+Args:
+    nums: List of integers to mutate.
+    val: Value to remove.
 
-Input:
-A list of integers nums. An integer val representing the value to be removed from the list.
+Returns:
+    Length of the array after deletions. Elements beyond that length are
+    unspecified.
 
-Output:
-An integer representing the new length of the modified list after removing all occurrences of val.
-
-Constraints:
-- Do not use any built-in list methods, except for pop() to remove elements.
-- It is okay to have extra space at the end of the modified list after removing elements.
-
+Example:
+    >>> nums = [3, 2, 2, 3]
+    >>> remove_element(nums, 3)
+    2
+    >>> nums[:2]
+    [2, 2]
 """
 
 import unittest

@@ -1,6 +1,15 @@
-"""
-Given two list, check if a common item exists in both lists.
-[1, 2, 5], [3, 4, 5] => True
+"""Detect whether two lists share any value using a hash table.
+
+Args:
+    list1: First list of integers.
+    list2: Second list of integers.
+
+Returns:
+    ``True`` if any element appears in both inputs, otherwise ``False``.
+
+Example:
+    >>> item_in_common([1, 2, 5], [3, 4, 5])
+    True
 """
 
 import sys

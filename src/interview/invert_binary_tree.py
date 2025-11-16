@@ -1,47 +1,13 @@
-"""
-BST: Invert Binary Tree ( ** Interview Question)
+"""Invert a binary search tree by swapping left/right children recursively.
 
-Objective: Write a method to invert (or mirror) a binary tree. This means that for every node in the binary tree, 
-you will swap its left and right children.
-
-Method Signature:
-def __invert_tree(self, node):
-
-Input:
-node: A Node object representing the root of a binary tree. The Node class has attributes value, left, and right, 
-where value is the value stored in the node, and left and right are pointers to the node's left and right children, respectively.
-
-Output:
-The root node of the inverted binary tree.
-
-Requirements:
-The method must be recursive. It should work by traversing the tree and swapping the left and right children of every node encountered.
-If the input tree is empty (i.e., node is None), the method should return None.
-The inversion should happen in-place, meaning you should not create a new tree but instead modify the existing tree structure.
-The method should handle binary trees of any size and structure, ensuring that every node's left and right children are swapped.
+The module defines ``BinarySearchTree.invert()``, which mirrors the tree in
+place and returns the updated root.
 
 Example:
-Given a binary tree structured as follows:
-
-#           47
-#         /    \
-#       21      76
-#      /  \    /  \
-#    18   27  52   82
-
-After calling __invert_tree(root), where root is the node with the value 47, the tree should be inverted to look like this:
-
-#           47
-#         /    \
-#       76      21
-#      /  \    /  \
-#    82   52  27   18
-
-
-Note: This problem requires understanding binary trees, recursion, and the ability to manipulate tree nodes directly. 
-The solution should ensure that every node's left and right children are swapped all the way down the tree, 
-effectively creating a mirror image of the original structure.
-
+    >>> bst = BinarySearchTree()
+    >>> for value in (47, 21, 76):
+    ...     bst.r_insert(value)
+    >>> bst.invert()
 """
         
 from data_structures.binary_search_tree import Node
