@@ -12,12 +12,9 @@ Example:
     True
 """
 
-import sys
-import os
-sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
-
 from typing import List
-from hash_table import HashTable
+
+from data_structures.hash_table import HashTable
 
 
 def item_in_common(list1: List[int], list2: List[int]) -> bool:
@@ -25,9 +22,12 @@ def item_in_common(list1: List[int], list2: List[int]) -> bool:
     for item in list1:
         hash_table.set_item(str(item), True)
     for item in list2:
-        item_found = hash_table.get_item(str(item))
-        return False if not item_found else item_found
+        if hash_table.get_item(str(item)):
+            return True
+    return False
 
-a = [1, 2, 4]
-b = [4, 8, 3]
-print(item_in_common(a, b))
+
+if __name__ == "__main__":
+    a = [1, 2, 4]
+    b = [4, 8, 3]
+    print(item_in_common(a, b))

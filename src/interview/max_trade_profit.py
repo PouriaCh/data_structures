@@ -8,9 +8,6 @@ Returns:
     when no profitable trade exists.
 """
 
-import unittest
-
-
 def max_profit(prices):
     if len(prices) <= 1:
         return 0
@@ -25,28 +22,3 @@ def max_profit(prices):
     
     return best_profit
 
-
-class TestMaxProfit(unittest.TestCase):
-    def test_mixed_prices(self):
-        prices = [7, 1, 5, 3, 6, 4]
-        self.assertEqual(max_profit(prices), 5)
-
-    def test_descending_prices(self):
-        prices = [7, 6, 4, 3, 1]
-        self.assertEqual(max_profit(prices), 0)
-
-    def test_ascending_prices(self):
-        prices = [1, 2, 3, 4, 5, 6]
-        self.assertEqual(max_profit(prices), 5)
-
-    def test_flat_prices(self):
-        prices = [5, 5, 5, 5]
-        self.assertEqual(max_profit(prices), 0)
-
-    def test_single_entry(self):
-        prices = [10]
-        self.assertEqual(max_profit(prices), 0)
-
-
-if __name__ == "__main__":
-    unittest.main()

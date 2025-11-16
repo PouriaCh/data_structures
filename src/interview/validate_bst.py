@@ -29,25 +29,11 @@ class ValidateBST(BinarySearchTree):
         return True
 
 
-my_tree = ValidateBST()
+if __name__ == "__main__":
+    my_tree = ValidateBST()
 
-my_tree.insert(47)
-my_tree.insert(21)
-my_tree.insert(76)
-my_tree.insert(18)
-my_tree.insert(27)
-my_tree.insert(52)
-my_tree.insert(82)
+    for value in (47, 21, 76, 18, 27, 52, 82):
+        my_tree.insert(value)
 
-print("BST is valid:")
-print(my_tree.is_valid_bst())
-
-
-
-"""
-    EXPECTED OUTPUT:
-    ----------------
-    BST is valid:
-    True
-
-"""
+    print("BST is valid:")
+    print(my_tree.is_valid_bst())
