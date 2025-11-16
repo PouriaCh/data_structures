@@ -27,25 +27,26 @@ def group_anagrams(strings):
     return list(all_strings_hash_list.values())
 ######################################
 
-print("1st set:")
-print( group_anagrams(["eat", "tea", "tan", "ate", "nat", "bat"]) )
+if __name__ == "__main__":
+    print("1st set:")
+    print(group_anagrams(["eat", "tea", "tan", "ate", "nat", "bat"]))
 
-print("\n2nd set:")
-print( group_anagrams(["abc", "cba", "bac", "foo", "bar"]) )
+    print("\n2nd set:")
+    print(group_anagrams(["abc", "cba", "bac", "foo", "bar"]))
 
-print("\n3rd set:")
-print( group_anagrams(["listen", "silent", "triangle", "integral", "garden", "ranged"]) )
+    print("\n3rd set:")
+    print(group_anagrams(["listen", "silent", "triangle", "integral", "garden", "ranged"]))
 
-"""
-    EXPECTED OUTPUT:
-    ----------------
-    1st set:
-    [['eat', 'tea', 'ate'], ['tan', 'nat'], ['bat']]
+    """
+        EXPECTED OUTPUT:
+        ----------------
+        1st set:
+        [['eat', 'tea', 'ate'], ['tan', 'nat'], ['bat']]
 
-    2nd set:
-    [['abc', 'cba', 'bac'], ['foo'], ['bar']]
+        2nd set:
+        [['abc', 'cba', 'bac'], ['foo'], ['bar']]
 
-    3rd set:
-    [['listen', 'silent'], ['triangle', 'integral'], ['garden', 'ranged']]
+        3rd set:
+        [['listen', 'silent'], ['triangle', 'integral'], ['garden', 'ranged']]
 
-"""
+    """

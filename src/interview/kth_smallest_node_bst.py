@@ -42,26 +42,17 @@ class KthSmallestNode(BinarySearchTree):
         return None
 
 
-bst = KthSmallestNode()
+if __name__ == "__main__":
+    bst = KthSmallestNode()
 
-bst.insert(5)
-bst.insert(3)
-bst.insert(7)
-bst.insert(2)
-bst.insert(4)
-bst.insert(6)
-bst.insert(8)
+    bst.insert(5)
+    bst.insert(3)
+    bst.insert(7)
+    bst.insert(2)
+    bst.insert(4)
+    bst.insert(6)
+    bst.insert(8)
 
-print(bst.kth_smallest(1))  # Expected output: 2
-print(bst.kth_smallest(3))  # Expected output: 4
-print(bst.kth_smallest(6))  # Expected output: 7
-
-
-"""
-    EXPECTED OUTPUT:
-    ----------------
-    2
-    4
-    7
-
- """
+    print(bst.kth_smallest(1))  # Expected output: 2
+    print(bst.kth_smallest(3))  # Expected output: 4
+    print(bst.kth_smallest(6))  # Expected output: 7

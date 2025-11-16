@@ -49,18 +49,14 @@ class MaxHeap:
         return max_value
 
 
-heap = MaxHeap()
-heap.insert(95)
-heap.insert(75)
-heap.insert(80)
-heap.insert(55)
-heap.insert(60)
-heap.insert(50)
-heap.insert(65)
-print(heap.heap)
+if __name__ == "__main__":
+    heap = MaxHeap()
+    for value in (95, 75, 80, 55, 60, 50, 65):
+        heap.insert(value)
+    print(heap.heap)
 
-heap.remove()
-print(heap.heap)
+    heap.remove()
+    print(heap.heap)
 
-heap.remove()
-print(heap.heap)
+    heap.remove()
+    print(heap.heap)

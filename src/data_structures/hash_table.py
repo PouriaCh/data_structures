@@ -38,19 +38,12 @@ class HashTable:
         return keys_list
 
 
-my_hash_table = HashTable()
+if __name__ == "__main__":
+    my_hash_table = HashTable()
 
-# set_item
-my_hash_table.set_item("bolts", 1400)
-my_hash_table.set_item("washers", 50)
-my_hash_table.set_item("lumber", 70)
+    my_hash_table.set_item("bolts", 1400)
+    my_hash_table.set_item("washers", 50)
+    my_hash_table.set_item("lumber", 70)
 
-# print_table
-my_hash_table.print_table()
-
-# get_item
-# print("lumber -> ", my_hash_table.get_item("lumber"))
-# print("None-existent -> ", my_hash_table.get_item("None-existent"))
-
-# keys
-print(my_hash_table.keys())
+    my_hash_table.print_table()
+    print(my_hash_table.keys())

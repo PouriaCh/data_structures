@@ -92,4 +92,5 @@ def test_invert_binary_search_tree():
         print(f"Expected: {expected}")
         print(f"Actual:   {result}")
 
-test_invert_binary_search_tree()
+if __name__ == "__main__":
+    test_invert_binary_search_tree()

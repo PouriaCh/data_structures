@@ -46,39 +46,39 @@ class InsertionSortLL(LinkedList):
         self.tail = temp 
 
 
-my_linked_list = InsertionSortLL(4)
-my_linked_list.append(2)
-my_linked_list.append(6)
-my_linked_list.append(5)
-my_linked_list.append(1)
-my_linked_list.append(3)
+if __name__ == "__main__":
+    my_linked_list = InsertionSortLL(4)
+    my_linked_list.append(2)
+    my_linked_list.append(6)
+    my_linked_list.append(5)
+    my_linked_list.append(1)
+    my_linked_list.append(3)
 
-print("Linked List Before Sort:")
-my_linked_list.print_list()
+    print("Linked List Before Sort:")
+    my_linked_list.print_list()
 
-my_linked_list.insertion_sort()
+    my_linked_list.insertion_sort()
 
-print("\nSorted Linked List:")
-my_linked_list.print_list()
+    print("\nSorted Linked List:")
+    my_linked_list.print_list()
 
+    """
+        EXPECTED OUTPUT:
+        ----------------
+        Linked List Before Sort:
+        4
+        2
+        6
+        5
+        1
+        3
 
-"""
-    EXPECTED OUTPUT:
-    ----------------
-    Linked List Before Sort:
-    4
-    2
-    6
-    5
-    1
-    3
+        Sorted Linked List:
+        1
+        2
+        3
+        4
+        5
+        6
 
-    Sorted Linked List:
-    1
-    2
-    3
-    4
-    5
-    6
-
-"""
+    """

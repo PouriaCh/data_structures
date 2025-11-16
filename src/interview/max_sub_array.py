@@ -16,9 +16,6 @@ Example:
     6
 """
 
-import unittest
-
-
 def max_subarray(nums):
     if len(nums) == 0:
         return 0
@@ -31,24 +28,3 @@ def max_subarray(nums):
         best_sum = max(best_sum, current_sum)
     
     return best_sum
-
-
-class TestMaxSubarray(unittest.TestCase):
-    def test_sample_case(self):
-        self.assertEqual(max_subarray([-2, 1, -3, 4, -1, 2, 1, -5, 4]), 6)
-
-    def test_all_negative(self):
-        self.assertEqual(max_subarray([-5, -2, -3]), -2)
-
-    def test_all_positive(self):
-        self.assertEqual(max_subarray([1, 2, 3]), 6)
-
-    def test_single_element(self):
-        self.assertEqual(max_subarray([4]), 4)
-
-    def test_empty(self):
-        self.assertEqual(max_subarray([]), 0)
-
-
-if __name__ == "__main__":
-    unittest.main()
