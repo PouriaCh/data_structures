@@ -10,7 +10,7 @@ Example:
     >>> bst.invert()
 """
         
-from data_structures.binary_search_tree import Node
+from data_structures.node import BSTNode
 
 
 class BinarySearchTree:
@@ -19,7 +19,7 @@ class BinarySearchTree:
 
     def __r_insert(self, current_node, value):
         if current_node == None: 
-            return Node(value)   
+            return BSTNode(value)   
         if value < current_node.value:
             current_node.left = self.__r_insert(current_node.left, value)
         elif value > current_node.value:  # Changed to elif to avoid comparing twice if equal
@@ -28,7 +28,7 @@ class BinarySearchTree:
 
     def r_insert(self, value):
         if self.root == None: 
-            self.root = Node(value)
+            self.root = BSTNode(value)
         else:
             self.__r_insert(self.root, value)
     
@@ -36,7 +36,7 @@ class BinarySearchTree:
         self.root = self.__invert_tree(self.root)
 
     #   +===================================================+
-    def __invert_tree(self, node: Node):
+    def __invert_tree(self, node: BSTNode):
         if node is None:
             return None
         node.left, node.right = self.__invert_tree(node.right), self.__invert_tree(node.left)

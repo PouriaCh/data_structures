@@ -15,7 +15,8 @@ Example:
 """
 
 from typing import List
-from data_structures.binary_search_tree import BinarySearchTree, Node
+from data_structures.binary_search_tree import BinarySearchTree
+from data_structures.node import BSTNode
 
 
 class KthSmallestNode(BinarySearchTree):
@@ -28,7 +29,7 @@ class KthSmallestNode(BinarySearchTree):
 
         results: List[int] = []
         
-        def traverse(current_node: Node):
+        def traverse(current_node: BSTNode):
             if current_node.left is not None:
                 traverse(current_node.left)
             results.append(current_node.value)
