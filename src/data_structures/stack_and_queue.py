@@ -1,20 +1,15 @@
 from typing import Any, Optional
-
-
-class Node:
-    def __init__(self, value: Any):
-        self.value = value
-        self.next = None
+from data_structures.node import LinkedListNode
 
 
 class Stack:
     def __init__(self, value: Any):
-        new_node = Node(value)
+        new_node = LinkedListNode(value)
         self.top = new_node
         self.height = 1
 
     def push(self, value: Any) -> bool:
-        new_node = Node(value)
+        new_node = LinkedListNode(value)
         if self.height == 0:
             self.top = new_node
         new_node.next = self.top
@@ -22,7 +17,7 @@ class Stack:
         self.height += 1
         return True
 
-    def pop(self) -> Optional[Node]:
+    def pop(self) -> Optional[LinkedListNode]:
         if self.height == 0:
             return None
         temp = self.top
@@ -43,13 +38,13 @@ class Stack:
 
 class Queue:
     def __init__(self, value: Any):
-        new_node = Node(value)
+        new_node = LinkedListNode(value)
         self.first = new_node
         self.last = new_node
         self.length = 1
 
     def enqueue(self, value: Any):
-        new_node = Node(value)
+        new_node = LinkedListNode(value)
         if self.length == 0:
             self.first = new_node
             self.last = new_node
@@ -59,7 +54,7 @@ class Queue:
         self.length += 1
         return True
 
-    def dequeue(self) -> Optional[Node]:
+    def dequeue(self) -> Optional[LinkedListNode]:
         if self.length == 0:
             return None
         temp = self.first

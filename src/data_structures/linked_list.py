@@ -1,24 +1,4 @@
-from typing import Any
-
-
-class Node:
-    """
-    A node in a linked list.
-
-    Attributes:
-        value: The integer value stored in the node.
-        next: Reference to the next node in the linked list.
-    """
-
-    def __init__(self, value: int):
-        """
-        Initializes a node with a given value.
-
-        Args:
-            value: The integer value to store in the node.
-        """
-        self.value = value
-        self.next = None
+from data_structures.node import LinkedListNode
 
 
 class LinkedList:
@@ -41,7 +21,7 @@ class LinkedList:
         Args:
             value: The integer value for the initial node.
         """
-        node = Node(value)
+        node = LinkedListNode(value)
         self.head = node
         self.tail = node
         self.length = 1
@@ -56,7 +36,7 @@ class LinkedList:
         Returns:
             True if the node was successfully appended.
         """
-        new_node = Node(value)
+        new_node = LinkedListNode(value)
         if self.length == 0:
             self.head = new_node
             self.tail = new_node
@@ -66,7 +46,7 @@ class LinkedList:
         self.length += 1
         return True
 
-    def pop(self) -> Node:
+    def pop(self) -> LinkedListNode:
         """
         Removes and returns the last node from the list.
 
@@ -99,7 +79,7 @@ class LinkedList:
         Returns:
             True if the node was successfully prepended.
         """
-        new_node = Node(value)
+        new_node = LinkedListNode(value)
         if self.length == 0:
             self.head = new_node
             self.tail = new_node
@@ -109,7 +89,7 @@ class LinkedList:
         self.length += 1
         return True
 
-    def pop_first(self) -> Node:
+    def pop_first(self) -> LinkedListNode:
         """
         Removes and returns the first node from the list.
 
@@ -130,7 +110,7 @@ class LinkedList:
         self.length -= 1
         return pop_node
 
-    def get(self, index: int) -> Node:
+    def get(self, index: int) -> LinkedListNode:
         """
         Retrieves the node at the specified index.
 
@@ -181,14 +161,14 @@ class LinkedList:
                 return self.prepend(value)
             if previous_node.next is None:
                 return self.append(value)
-            new_node = Node(value)
+            new_node = LinkedListNode(value)
             new_node.next = previous_node.next
             previous_node.next = new_node
             self.length += 1
             return True
         return False
 
-    def remove(self, index: int) -> Node:
+    def remove(self, index: int) -> LinkedListNode:
         """
         Removes and returns the node at the specified index.
 
@@ -229,7 +209,7 @@ class LinkedList:
             prev_temp = temp
             temp = post_temp
 
-    def remove_duplicates(self) -> Node:
+    def remove_duplicates(self) -> LinkedListNode:
         """
         Removes duplicate values from the linked list, keeping only the first occurrence.
 

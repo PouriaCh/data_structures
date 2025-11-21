@@ -4,7 +4,7 @@ from interview.find_longest_string import find_longest_string
 from interview.find_max_min import find_max_min
 from interview.find_set_pairs import find_pairs
 from interview.group_anagrams import group_anagrams
-from interview.hast_table_1 import item_in_common
+from interview.hast_table import item_in_common
 from interview.max_stream_element import stream_max
 from interview.max_sub_array import max_subarray
 from interview.max_trade_profit import max_profit

@@ -1,13 +1,5 @@
-import re
 from typing import List
-from unittest import result
-
-
-class Node:
-    def __init__(self, value):
-        self.value = value
-        self.left = None
-        self.right = None
+from data_structures.node import BSTNode
 
 
 class BinarySearchTree:
@@ -15,7 +7,7 @@ class BinarySearchTree:
         self.root = None
 
     def insert(self, value) -> bool:
-        new_node = Node(value)
+        new_node = BSTNode(value)
         if self.root is None:
             self.root = new_node
             return True
@@ -64,7 +56,7 @@ class BinarySearchTree:
 
     def __r_insert(self, current_node, value):
         if current_node is None:
-            return Node(value)
+            return BSTNode(value)
         if value > current_node.value:
             current_node.right = self.__r_insert(current_node.right, value)
         if value < current_node.value:
@@ -73,7 +65,7 @@ class BinarySearchTree:
 
     def r_insert(self, value):
         if self.root is None:
-            self.root = Node(value)
+            self.root = BSTNode(value)
         self.__r_insert(self.root, value)
 
     def __r_delete(self, current_node, value):
@@ -139,7 +131,7 @@ class BinarySearchTree:
                     self._print_tree(node.left, extend, True)
 
     def BFS(self):
-        queue: List[Node] = []
+        queue: List[BSTNode] = []
         queue.append(self.root)
         results: List[int] = []
         while len(queue) > 0:
@@ -154,7 +146,7 @@ class BinarySearchTree:
     def dfs_pre_order(self):
         results: List[int] = []
 
-        def traverse(current_node: Node):
+        def traverse(current_node: BSTNode):
             results.append(current_node.value)
             if current_node.left is not None:
                 traverse(current_node.left)
@@ -167,7 +159,7 @@ class BinarySearchTree:
     def dfs_post_order(self):
         results: List[int] = []
 
-        def traverse(current_node: Node):
+        def traverse(current_node: BSTNode):
             if current_node.left is not None:
                 traverse(current_node.left)
             if current_node.right is not None:
@@ -180,7 +172,7 @@ class BinarySearchTree:
     def dfs_in_order(self):
         results: List[int] = []
 
-        def traverse(current_node: Node):
+        def traverse(current_node: BSTNode):
             if current_node.left is not None:
                 traverse(current_node.left)
             results.append(current_node.value)
