@@ -198,16 +198,17 @@ class LinkedList:
         The head becomes the tail and the tail becomes the head.
         All node references are reversed.
         """
-        temp = self.head
-        self.head = self.tail
-        self.tail = temp
-        post_temp = temp.next
-        prev_temp = None
-        for _ in range(self.length):
-            post_temp = temp.next
-            temp.next = prev_temp
-            prev_temp = temp
-            temp = post_temp
+        prev_tmp = None
+        current = self.head
+
+        while current:
+            next_tmp = current.next
+            current.next = prev_tmp
+            prev_tmp = current
+            current = next_tmp
+        
+        self.tail = self.head
+        self.head = prev_tmp
 
     def remove_duplicates(self) -> LinkedListNode:
         """
