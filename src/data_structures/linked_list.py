@@ -219,21 +219,20 @@ class LinkedList:
         Returns:
             The head node of the modified list, or None if the list is empty.
         """
-        if self.head is None:
+        if not self.head:
             return None
-        output = self.head
-        temp = self.head.next
-        values = set()
-        values.add(output.value)
-        while temp:
-            if temp.value not in values:
-                values.add(temp.value)
-                output.next = temp
-                output = output.next
+        
+        seen_values = {self.head.value}
+        current = self.head
+
+        while current.next:
+            if current.next.value in seen_values:
+                current.next = current.next.next
             else:
-                output.next = temp.next
-            temp = temp.next
-        return output
+                seen_values.add(current.next.value)
+                current = current.next
+
+        self.tail = current
 
     def print_list(self):
         """
