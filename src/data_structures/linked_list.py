@@ -247,37 +247,45 @@ class LinkedList:
             temp_node = temp_node.next
         print(output)
 
-    def reverse_between(self, start_index: int, end_index: int):
+    def reverse_between(self, start: int, end: int):
         """
         Reverses a portion of the linked list between two indices.
 
-        Reverses the nodes from start_index to end_index (inclusive) in place.
+        Reverses the nodes from start to end (inclusive) in place.
 
         Args:
-            start_index: The zero-based starting index of the range to reverse.
-            end_index: The zero-based ending index of the range to reverse.
+            start: The zero-based starting index of the range to reverse.
+            end: The zero-based ending index of the range to reverse.
 
         Returns:
             None if the list is empty or has fewer than 2 nodes, otherwise modifies
             the list in place.
         """
-        if not self.head or not self.head.next:
-            return None
-        start_node = self.head
-        for _ in range(start_index):
-            start_node = start_node.next
-        end_node = start_node
-        for _ in range(end_index - start_index):
-            if end_node:
-                end_node = end_node.next
-        
-        temp = start_node
-        start_node = end_node
-        end_node = temp
-        after = temp.next
-        before = None
-        while temp:
-            after = temp.next
-            temp.next = before
-            before = temp
-            temp = after
+        if not self.head or start >= end or start < 0:
+            return
+
+        dummy = LinkedListNode(0)
+        dummy.next = self.head
+        prev = dummy
+
+        # Move prev to the node BEFORE start index — but don't go past the end
+        for _ in range(start):
+            if not prev.next:      # Safety: stop if we've reached the end
+                return
+            prev = prev.next
+
+        # The node at index 'start' will become the new tail if reversal reaches end
+        new_tail_candidate = prev.next
+
+        current = prev.next
+        for _ in range(end - start):
+            if not current or not current.next:
+                break
+            node = current.next
+            current.next, node.next, prev.next = node.next, prev.next, node
+
+        self.head = dummy.next
+
+        # Only update tail if the reversed section included the original tail
+        if end >= self.length - 1:
+            self.tail = new_tail_candidate
