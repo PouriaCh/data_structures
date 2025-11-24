@@ -15,16 +15,8 @@ Example:
     [0, 1, 2]
 """
 
-# def remove_duplicates(mylist):
-#     initial_length = len(mylist)
-#     if initial_length == 0:
-#         return 0
-#     total_duplicates = 0
-#     for i in range(1, initial_length):
-#         if mylist[i - 1] == mylist[i]:
+import unittest
 
-#             total_duplicates += 1
-#     return initial_length - total_duplicates
 
 def remove_duplicates(nums):
     if not nums:
@@ -38,6 +30,9 @@ def remove_duplicates(nums):
             write_pointer += 1
  
     return write_pointer
+
+
+class TestRemoveDuplicates(unittest.TestCase):
     def test_consecutive_duplicates_at_end(self):
         """Test with consecutive duplicates at the end."""
         nums = [1, 2, 3, 4, 4, 4]
