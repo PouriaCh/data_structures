@@ -10,6 +10,8 @@ Example:
     >>> find_max_min([5, 3, 8, 1, 6, 9])
     (9, 1)
 """
+import unittest
+
 
 def find_max_min(mylist):
     if len(mylist) == 0:
@@ -27,6 +29,7 @@ def find_max_min(mylist):
     return (max_value, min_value)
 
 
+class TestFindMaxMin(unittest.TestCase):
     def test_zeros(self):
         """Test with zeros in the list."""
         mylist = [0, -5, 10, 0, -3]
@@ -75,4 +78,3 @@ def find_max_min(mylist):
 
 if __name__ == '__main__':
     unittest.main()
-    

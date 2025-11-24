@@ -93,13 +93,13 @@ class BinarySearchTree:
 
     @staticmethod
     def min_value(current_node):
-        while current_node.left is not None:
+        while current_node.left:
             current_node = current_node.left
         return current_node.value
     
     @staticmethod
     def max_value(current_node):
-        while current_node.right is not None:
+        while current_node.right:
             current_node = current_node.right
         return current_node.value
 
@@ -131,16 +131,17 @@ class BinarySearchTree:
                     self._print_tree(node.left, extend, True)
 
     def BFS(self):
-        queue: List[BSTNode] = []
-        queue.append(self.root)
         results: List[int] = []
+
+        queue: List[BSTNode] = [self.root]
+
         while len(queue) > 0:
-            current_node = queue.pop(0)
+            current_node = queue.pop()
             results.append(current_node.value)
-            if current_node.left is not None:
-                queue.append(current_node.left)
-            if current_node.right is not None:
-                queue.append(current_node.right)
+            if current_node.left:
+                queue.insert(0, current_node.left)
+            if current_node.right:
+                queue.insert(0, current_node.right)
         return results
 
     def dfs_pre_order(self):
@@ -148,9 +149,9 @@ class BinarySearchTree:
 
         def traverse(current_node: BSTNode):
             results.append(current_node.value)
-            if current_node.left is not None:
+            if current_node.left:
                 traverse(current_node.left)
-            if current_node.right is not None:
+            if current_node.right:
                 traverse(current_node.right)
     
         traverse(self.root)
@@ -160,9 +161,9 @@ class BinarySearchTree:
         results: List[int] = []
 
         def traverse(current_node: BSTNode):
-            if current_node.left is not None:
+            if current_node.left:
                 traverse(current_node.left)
-            if current_node.right is not None:
+            if current_node.right:
                 traverse(current_node.right)
             results.append(current_node.value)
     
@@ -173,10 +174,10 @@ class BinarySearchTree:
         results: List[int] = []
 
         def traverse(current_node: BSTNode):
-            if current_node.left is not None:
+            if current_node.left:
                 traverse(current_node.left)
             results.append(current_node.value)
-            if current_node.right is not None:
+            if current_node.right:
                 traverse(current_node.right)
     
         traverse(self.root)

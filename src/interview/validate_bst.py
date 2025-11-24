@@ -20,12 +20,9 @@ class ValidateBST(BinarySearchTree):
     
     def is_valid_bst(self) -> bool:
         dfs_in_order_result = self.dfs_in_order()
-        current_value = dfs_in_order_result.pop(0)
-        while len(dfs_in_order_result) > 0:
-            next_value = dfs_in_order_result.pop(0)
-            if current_value >= next_value:
+        for idx in range(1, len(dfs_in_order_result)):
+            if dfs_in_order_result[idx - 1] > dfs_in_order_result[idx]:
                 return False
-            current_value = next_value
         return True
 
 
@@ -35,5 +32,4 @@ if __name__ == "__main__":
     for value in (47, 21, 76, 18, 27, 52, 82):
         my_tree.insert(value)
 
-    print("BST is valid:")
-    print(my_tree.is_valid_bst())
+    print(f"BST is valid? {my_tree.is_valid_bst()}")

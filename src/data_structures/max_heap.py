@@ -51,8 +51,7 @@ class MaxHeap:
 
 if __name__ == "__main__":
     heap = MaxHeap()
-    for value in (95, 75, 80, 55, 60, 50, 65):
-        heap.insert(value)
+    for value in (95, 75, 80, 55, 60, 50, 65): heap.insert(value)
     print(heap.heap)
 
     heap.remove()
